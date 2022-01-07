@@ -150,7 +150,7 @@ func validateJobs() {
 
 		// Ensure that the output directory is set
 		if j.Output == "" {
-			dir := "/" + strconv.Itoa(i) + "-output"
+			dir := "/job-" + strconv.Itoa(i) + "/output"
 			log.Warning("No Output Directory set on Job " + strconv.Itoa(i) + ", using " + dir)
 			j.Output = dir
 			changed = true
