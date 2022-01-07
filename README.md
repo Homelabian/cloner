@@ -1,11 +1,11 @@
-<div style="padding-bottom: 50px;">
-    <img src="./resources/cloner_light.png#gh-dark-mode-only" alt="Cloner" width="200" style="display: block; margin-left: auto; margin-right: auto; padding-top: 50px;">
-    <img src="./resources/cloner_dark.png#gh-light-mode-only" alt="Cloner" width="200" style="display: block; margin-left: auto; margin-right: auto; padding-top: 50px;">
-</div>
+<p align="center">
+    <img src="./resources/cloner_light.png#gh-dark-mode-only" alt="Cloner" width="200">
+    <img src="./resources/cloner_dark.png#gh-light-mode-only" alt="Cloner" width="200">
+</p>
 
 Cloner is a simple Docker container, built on Go, to easily clone a git repo into a Docker Volume on a regular basis. This lets you easily mount a git repo into a container, in a way that will auto-update, for deployments with systems like Docker Compose and Portainer.
 
-<div style="padding-top:50px; text-align: center;">
+<p align="center">
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/Homelabian/cloner?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/homelabian/cloner?style=for-the-badge)
@@ -16,8 +16,7 @@ Cloner is a simple Docker container, built on Go, to easily clone a git repo int
 
 ![GitHub language count](https://img.shields.io/github/languages/count/homelabian/cloner?style=for-the-badge)
 ![GitHub top language](https://img.shields.io/github/languages/top/homelabian/cloner?style=for-the-badge)
-
-</div>
+</p>
 
 ## Pulling the container
 
