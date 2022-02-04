@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  cloner:
+    image: 43c372eb9b1a
+    container_name: cloner_dev_testing
+    environment:
+      - CLONER_1_CRON="0 0 0 * * *"
+      - CLONER_1_REPO=https://github.com/Homelabian/cloner
+      - CLONER_1_OUTPUT=/clonerDev
+    volumes:
+      - clonerDev:/clonerDev
+
+volumes:
+  clonerDev:
