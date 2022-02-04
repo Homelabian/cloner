@@ -7,6 +7,7 @@ import (
 
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/transport/http"
+	"github.com/robfig/cron"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -168,4 +169,8 @@ func validateJobs() {
 			AllJobs[i] = j
 		}
 	}
+}
+
+func scheduleJob(c *cron.Cron, job Job) {
+	c.AddFunc(job.Cron, func() { clone(job) })
 }
