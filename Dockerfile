@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine
+FROM golang:1.17-alpine AS build
 
 WORKDIR /app
 
@@ -10,4 +10,8 @@ RUN go mod download
 COPY *.go ./
 RUN go build -o /cloner
 
-ENTRYPOINT [ "/cloner" ]
+FROM alpine
+WORKDIR /
+COPY --from=build /cloner /bin/cloner
+
+ENTRYPOINT [ "/bin/cloner" ]
