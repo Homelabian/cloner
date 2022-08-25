@@ -27,6 +27,7 @@ type Repo struct {
 	Username     string
 	Password     string
 	URL          string
+	Branch       string
 	CloneOptions *git.CloneOptions
 }
 
@@ -65,6 +66,7 @@ func loadJobs() {
 	// REPOUSER
 	// REPOPASS
 	// OUTPUT
+	// BRANCH
 
 	// Split Env Variables into components
 	confs := make(map[int]Job)
@@ -108,6 +110,8 @@ func loadJobs() {
 			job.Repo.Password = value
 		case "OUTPUT":
 			job.Output = value
+		case "BRANCH":
+			job.Repo.Branch = value
 		default:
 			log.Error("Unrecognised ENV Setting - " + setting + ", with value " + value)
 		}
@@ -136,6 +140,10 @@ func buildCloneOptions() {
 			co.Auth = &auth
 		} else {
 			co.URL = j.Repo.URL
+		}
+
+		if j.Repo.Branch != " " {
+			co.RemoteName = j.Repo.Branch
 		}
 
 		// Push back to main Config
